@@ -1,1 +1,3 @@
-# lone_wolf
+# Modules
+
+This repository for storing simple modules only.
