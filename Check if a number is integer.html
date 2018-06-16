@@ -1,0 +1,99 @@
+<html>
+<head>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <style>
+
+  .container {
+    margin: auto;
+    font-family: roboto;
+  }
+
+  .birthYear {
+    width: 200px;
+    border-radius: 2px;
+    border: solid 1px;
+  }
+
+  .result {
+    width: 200px;
+    height: 50px;
+    border: solid 1px;
+    border-radius: 2px;
+    text-align: center;
+  }
+
+  .type1 {
+    padding: 5px 53px;
+    background: white;
+    border-style: none;
+    border: solid 1px;
+    border-radius: 2px;
+  }
+
+  .type1:hover {
+    font: white;
+    background: #eaeaea;
+    border: solid 1px;
+    cursor: pointer;
+  }
+
+  </style>
+
+</head>
+
+<body>
+
+<div class="container">
+  <h3>Give me a number in this box and I will let you know if it is integer number.</h3>
+  <input class ="birthYear"></input>
+  <div class = "result"></div>
+  <div class = "type1" style="width:200px">Show result</div>
+</div>
+
+<script>
+
+
+
+$('.type1').click(function() {
+
+  var x = Number($('.birthYear').val());
+
+  if (isNaN(x) === false) {
+    if (x == parseInt(x,10)) {
+      $('.result').html("integer number");
+    } else {
+        $('.result').html("not an integer");
+      }
+  } else {
+      $('.result').html("not a number");
+    }
+});
+
+
+/*
+
+var x;
+
+function checkInterger() {
+  if (ifNaN(x) === false) {
+    if (x === parseInt(x,10)) {
+      console.log("integer number");
+    } else {
+        console.log("not an integer");
+      }
+  } else {
+      console.log("not a number");
+    }
+};
+
+*/
+
+
+
+</script>
+
+</body>
+</html>

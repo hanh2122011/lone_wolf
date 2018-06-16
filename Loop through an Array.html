@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <style>
+  * {
+    box-sizing: border-box;
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .myButton {
+    border: solid 1px;
+    width: 120px;
+    height: 30px;
+    margin: auto;
+  }
+  .myButton:hover {
+    border: solid;
+    cursor: pointer;
+  }
+
+  .result {
+    position: relative;
+    top: 30px;
+    border: solid 1px;
+    width: 500px;
+    height: 100px;
+    margin: auto;
+  }
+
+  .myResult {
+    font-weight: bold;
+  }
+
+  </style>
+</head>
+
+<body>
+<h1>Loop through an Array</h1>
+<div class='myButton'>Get next unit</div>
+<div class='result'></div>
+
+
+<script>
+// Take out a random string from an array when click the button
+  var i = 0;
+
+  $('.myButton').click(function() {
+    var numberList = ['zero', 'one', 'two', 'three', 'four', 'five'];
+    if (i < numberList.length) {
+      $('.result').append(numberList[i] + " ");
+      i++;
+      } else {
+      i = 0
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <style>
+  * {
+    box-sizing: border-box;
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .button {
+    border: solid 1px;
+    width: 120px;
+    height: 30px;
+    margin: auto;
+  }
+  .button:hover {
+    border: solid;
+    cursor: pointer;
+  }
+
+  .result {
+    width: 500px;
+    height: 100px;
+    margin: auto;
+  }
+
+  .setRange {
+    border: 1px solid;
+    border-radius: 3px;
+  }
+
+  </style>
+</head>
+
+<body>
+<h1>Get random number from a range</h1>
+<p style="font-style:italic">I will give you a random natural number in your range:</p>
+<input class="setRange" type="text"></input>
+<div class='button'>Get number</div>
+
+<p style="display:inline;">Here you go: </p><div class='result' style="display:inline;"></div>
+
+<script>
+// Take out a random string from an array when click the button
+
+  $('.button').click(function() {
+    var range = Number($('.setRange').val());
+    if (range == "") {
+      $('.setRange').val('empty');
+    } else {
+      if (range != NaN) {
+        $('.result').html(Math.floor(Math.random()*range+1));
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

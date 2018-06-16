@@ -1,0 +1,46 @@
+<!-- Import script -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+  crossorigin="anonymous">
+
+<style>
+ #result{
+   overflow: auto;
+ }
+</style>
+<section class="container-fluid">
+  <h1 class="text-center">Multilisting Ebay Link Maker</h1>
+  <p class="text-center">Give as much Ebay itemID as you want and i will give you Ebay link contain all of them</p>
+  <div class="row">
+    <div class="col-sm-6">
+      <form id="my-form">
+        <textarea id="mytextarea" name="name" rows="20" cols="80"></textarea>
+      </form>
+      <button id="myButton" name="button" class="btn btn-primary">Submit</button>
+
+    </div>
+    <div id="result" class="col-sm-6">
+      <h3>Here you go:</h3>
+    </div>
+  </div>
+</section>
+
+  <script type="text/javascript">
+
+  var listOfProductIDLinks ="";
+  var listOfProducts = "";
+  var eBayLink = "";
+
+  function generateEbayLink() {
+    $('#result').html('');
+    // convert textarea values to array, separate by \n
+    listOfProductIDLinks = $('textarea#mytextarea').val().split("\n");
+    // loop through listOfProductIDLinks
+    for (i = 0; i < listOfProductIDLinks.length; i++) {
+      listOfProducts = listOfProducts.concat(listOfProductIDLinks[i]).concat(",");
+    }
+    eBayLink = "http://k2b-bulk.ebay.com/ws/eBayISAPI.dll?MfcISAPICommand=ListingConsole&currentpage=LCActive&pageNumber=1&searchField=ItemId&searchValues=".concat(listOfProducts);
+    $('#result').append(eBayLink);
+  }
+  $('#myButton').click(generateEbayLink);
+</script>
